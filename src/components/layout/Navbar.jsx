@@ -5,6 +5,7 @@ import { Box, IconButton, Typography } from '@mui/material';
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { tokens } from '../../theme';
 import "react-pro-sidebar/dist/css/styles.css";
+import { Link } from 'react-router-dom';
 
 const Tab = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -12,7 +13,7 @@ const Tab = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem active={selected === title} style={{ color: colors.grey[100] }} onClick={() => setSelected(title)} icon={icon}>
       <Typography>{title}</Typography>
-      <link to={to} />
+      <Link to={to} />
     </MenuItem>
   );
 };
@@ -79,14 +80,14 @@ const Navbar = () => {
             <Tab title="Contacts" to="/contacts" icon={<ContactsOutlined />} selected={selected} setSelected={setSelected}/>
             <Tab title="Invoices" to="/invoices" icon={<ReceiptOutlined />} selected={selected} setSelected={setSelected}/>
             <Typography variant="h5" color={colors.grey[300]} sx={{ m: "15px 0 5px 20px" }}>Pages</Typography>
-            <Tab title="Add User" to="/form" icon={<PersonOutlined />} selected={selected} setSelected={setSelected}/>
+            <Tab title="Add User" to="/user" icon={<PersonOutlined />} selected={selected} setSelected={setSelected}/>
             <Tab title="Calendar" to="/calendar" icon={<CalendarTodayOutlined />} selected={selected} setSelected={setSelected}/>
             <Tab title="FAQ" to="/faq" icon={<HelpOutlined />} selected={selected} setSelected={setSelected}/>
             <Typography variant="h5" color={colors.grey[300]} sx={{ m: "15px 0 5px 20px" }}>Charts</Typography>
             <Tab title="Bar" to="/bar" icon={<BarChartOutlined />} selected={selected} setSelected={setSelected}/>
             <Tab title="Pie" to="/pie" icon={<PieChartOutlined />} selected={selected} setSelected={setSelected}/>
             <Tab title="Line" to="/line" icon={<TimelineOutlined />} selected={selected} setSelected={setSelected}/>
-            <Tab title="Geo" to="/geography" icon={<MapOutlined />} selected={selected} setSelected={setSelected}/>
+            <Tab title="Geo" to="/geo" icon={<MapOutlined />} selected={selected} setSelected={setSelected}/>
           </Box>
         </Menu>
       </ProSidebar>
