@@ -53,18 +53,20 @@ export const FAQ = () => {
     <Box m="20px">
         <PageHeader title="FAQ" subtitle="Frequently Asked Questions" />
         {QandA && QandA.map(current => (
-          <Accordion defaultExpanded={false}>
-            <AccordionSummary expandIcon={<ExpandMore />}>
-              <Typography color={colors.greenAccent[500]} variant="h5">
-                {current.question}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                {current.answer}
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          <Box mb="10px">
+            <Accordion defaultExpanded={false}>
+              <AccordionSummary expandIcon={<ExpandMore />}>
+                <Typography color={colors.greenAccent[500]} variant="h5">
+                  {current.question}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>
+                  {current.answer}
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Box> 
         ))}
     </Box>    
   );
